@@ -25,9 +25,7 @@ function createWindow(){
 
     // this will load our Vue.js application URL in the window
     mainWindow.loadURL('http://localhost:8080');
-
-    // open developer tools for debugging
-    mainWindow.webContents.openDevTools(); 
+    mainWindow.webContents.openDevTools(); // open developer tools for debugging
 }
 
 // we listen for a 'ready' event which is triggered/emitted when Electron finishes initialization
