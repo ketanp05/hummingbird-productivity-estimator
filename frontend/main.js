@@ -2,8 +2,6 @@
 this file is the main process of our Electron application
 */
 
-// const { create } = require('core-js/core/object');
-
 // import the 'app' and 'BrowserWindow' modules from Electron
 const { app, BrowserWindow } = require('electron');
 
@@ -15,6 +13,7 @@ function createWindow(){
     const mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
+        title: 'Hummingbird',
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
 
@@ -27,7 +26,7 @@ function createWindow(){
     mainWindow.loadURL('http://localhost:8080');
     
     // open developer tools for debugging
-    // mainWindow.webContents.openDevTools(); 
+    mainWindow.webContents.openDevTools(); 
 }
 
 // we listen for a 'ready' event which is triggered/emitted when Electron finishes initialization
